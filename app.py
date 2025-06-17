@@ -45,5 +45,5 @@ if uploaded_file is not None:
             model = models[selected_model]
             model.fit(X_train, y_train)
             y_pred = model.predict(X_test)
-            score = f1_score(y_test, y_pred, average='binary')
+            score = f1_score(y_test, y_pred, average='weighted')
             st.success(f"F1 Score obtenu avec {selected_model} : {score:.4f}")
